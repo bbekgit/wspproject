@@ -16,6 +16,7 @@ async function logOut() {
         await firebase.auth().signOut()
         window.location.href = '/login'
     } catch (e) {
+      
         window.location.href = '/login'
     }
 }
