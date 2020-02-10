@@ -37,12 +37,22 @@ async function show_page_secured() {
         const p = products[index]
         glPageContent.innerHTML += `
         <div id="${p.docId}"class="card" style="width: 18rem; display: inline-block">
-            <img src="${p.image_url}" class="card-img-top">
-            <div class="card-body">
-            <h5 class="card-title">${p.name}</h5>
-            <p class="card-text">${p.price}<br/>${p.summary}</p>
-            </div>
+        <img src="${p.image_url}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${p.name}</h5>
+          <p class="card-text">${p.price}<br/>${p.summary}</p>
         </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Fantastic!</li>
+          <li class="list-group-item">Visit Nepal 2020</li>
+          <li class="list-group-item">Please Click Below</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="https://imartnepal.com/">Click Here for more info</a>
+          </div>
+      </div>
         `;
     }
+
 }
+
