@@ -7,6 +7,7 @@ let glImageFile2Add; // file selected by imageButton
 function add_page_secured() {
     glPageContent.innerHTML = '<h1>Add Page</h1>'
     glPageContent.innerHTML = `
+    <span class="border border-success"></span>
         <a href='/home' class="btn btn-outline-primary">Home</a>
         <a href='/show' class="btn btn-outline-primary">Show Products</a>
         <div class="form-group">

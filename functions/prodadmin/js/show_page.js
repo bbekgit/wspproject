@@ -36,6 +36,7 @@ async function show_page_secured() {
     for (let index = 0; index < products.length; index++) {
         const p = products[index]
         glPageContent.innerHTML += `
+        <span class="border border-success"></span>
         <div id="${p.docId}"class="card" style="width: 18rem; display: inline-block">
         <img src="${p.image_url}" class="card-img-top" alt="...">
         <div class="card-body">
