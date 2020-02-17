@@ -16,7 +16,7 @@ async function show_page_secured() {
     try {
         products = []
         const snapshot = await firebase.firestore().collection(COLLECTION)
-                        .where("name","==", "Khukuri")
+                        //.where("name","==", "Khukuri")
                         //.orderBy("price")
                         .get()
         snapshot.forEach(doc => {
