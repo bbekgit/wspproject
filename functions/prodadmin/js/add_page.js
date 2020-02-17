@@ -4,6 +4,7 @@ function add_page() {
  
 let glImageFile2Add; // file selected by imageButton
  
+
 function add_page_secured() {
     glPageContent.innerHTML = '<h1>Add Page</h1>'
     glPageContent.innerHTML = `
