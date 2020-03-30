@@ -1,12 +1,13 @@
 
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./akhilreddym-wsp20-7b5de-firebase-adminsdk-e2kr8-bd4e1ac613.json");
+var serviceAccount = require("./bibekg-wsp20-firebase-adminsdk-7fp1i-3301fa7523.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://akhilreddym-wsp20-7b5de.firebaseio.com"
+  databaseURL: "https://bibekg-wsp20.firebaseio.com"
 });
+
 
 async function createUser(req, res) {
     const email = req.body.email
