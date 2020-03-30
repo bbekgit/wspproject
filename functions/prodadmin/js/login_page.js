@@ -14,7 +14,7 @@ function login_page() {
         }
     })
 }
- 
+
 async function signIn() {
     console.log('signIn()')
     try {
@@ -35,5 +35,3 @@ async function signIn() {
         `;
     }
 }
- 
-

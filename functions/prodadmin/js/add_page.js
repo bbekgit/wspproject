@@ -1,14 +1,12 @@
 function add_page() {
     auth('prodadmin@test.com', add_page_secured, '/login')
 }
- 
+
 let glImageFile2Add; // file selected by imageButton
- 
 
 function add_page_secured() {
     glPageContent.innerHTML = '<h1>Add Page</h1>'
     glPageContent.innerHTML = `
-    <span class="border border-success"></span>
         <a href='/home' class="btn btn-outline-primary">Home</a>
         <a href='/show' class="btn btn-outline-primary">Show Products</a>
         <div class="form-group">
@@ -30,54 +28,54 @@ function add_page_secured() {
         </div> 
         <button class="btn btn-primary" type="button" onclick="addProduct()">Add</button>
     `;
- 
+
     const imageButton = document.getElementById('imageButton')
     imageButton.addEventListener('change', e => {
         glImageFile2Add = e.target.files[0]
         // console.log('file upload', e.target.files[0])
     })
 }
- 
+
 async function addProduct() {
     const name = document.getElementById('name').value
     const summary = document.getElementById('summary').value
     let price = document.getElementById('price').value
- 
+
     // input validation
     const nameErrorTag = document.getElementById('name_error')
     const summaryErrorTag = document.getElementById('summary_error')
     const priceErrorTag = document.getElementById('price_error')
     const imageErrorTag = document.getElementById('image_error')
- 
+
     nameErrorTag.innerHTML = validate_name(name)
     summaryErrorTag.innerHTML = validate_summary(summary)
     priceErrorTag.innerHTML = validate_price(price)
     imageErrorTag.innerHTML = !glImageFile2Add ? 'Error: image file not selected' : null
- 
+
     if (nameErrorTag.innerHTML || summaryErrorTag.innerHTML
          || priceErrorTag.innerHTML || imageErrorTag.innerHTML) {
             return
         }
- 
+
     // now ready to add the product into firebase
- 
+
     try {
         const image = Date.now() + glImageFile2Add.name // unique name
         const ref = firebase.storage().ref(IMAGE_FOLDER + image)
         const taskSnapshot = await ref.put(glImageFile2Add)
         const image_url = await taskSnapshot.ref.getDownloadURL()
- 
+
         // product: name,summary,price in Firestore
         price = Number(price)
         await firebase.firestore().collection(COLLECTION).doc()
                 .set({name, summary, price, image, image_url})
- 
+
         // console.log('image_url', image_url)
         glPageContent.innerHTML = `
             <h1>${name} is added</h1>
             <a href="/show" class="btn btn-outline-primary">Show All</a>
-        `;
- 
+        `; 
+
     } catch (e) {
         glPageContent.innerHTML = `
         <h1>Cannot add a product</h1>
@@ -85,4 +83,3 @@ async function addProduct() {
         `;
     }
 }
-

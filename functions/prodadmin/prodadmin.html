@@ -1,87 +1,86 @@
-<!doctype html>
-<html lang="en">
- 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
-    <link rel="stylesheet" href="css/my.css">
- 
-    <title>Product Admin</title>
-</head>
- 
-<body>
-    <h1 class="display-5" style="background-color: blue; color: white;">Product Admin's Page</h1>
-    <div class="jumbotron" id="page_content"></div>
- 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/7.7.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.7.0/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/7.7.0/firebase-storage.js"></script>
- 
- 
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyB0CO6aNpblkTKsjRjNBifYJR1vuLNkuIk",
-    authDomain: "bibekg-wsp20.firebaseapp.com",
-    databaseURL: "https://bibekg-wsp20.firebaseio.com",
-    projectId: "bibekg-wsp20",
-    storageBucket: "bibekg-wsp20.appspot.com",
-    messagingSenderId: "53826661133",
-    appId: "1:53826661133:web:b9d16780bb6953fb81de44"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
- 
-    <script src = "js/product_validate.js"></script>
-    <script src = "js/login_page.js"></script>
-    <script src = "js/auth.js"></script>
-    <script src = "js/home_page.js"></script>
-    <script src = "js/add_page.js"></script>
-    <script src = "js/show_page.js"></script>
- 
-    <script>
-        const glPageContent = document.getElementById('page_content')
-        const IMAGE_FOLDER = 'products/'
-        const COLLECTION = 'products/'
- 
-        window.onload = function() {
-            const currentPath = window.location.pathname
-            if (currentPath === '/login') {
-                login_page()
-            } else if (currentPath === '/home') {
-                home_page()
-            } else if (currentPath === '/add') {
-                add_page()
-            } else if (currentPath === '/show') {
-                show_page()
-            } else {
-                window.location.href = '/'
-            }
-        }
-    </script>
- 
- 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
- 
-</html>
 
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="css/my.css">
+    
+        <title>Product Admin</title>
+    </head>
+    
+    <body>
+        <h1 class="display-5" style="background-color: blue; color: white;">Product Admin's Page</h1>
+        <div class="jumbotron" id="page_content"></div>
+    
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+        <script defer src="/__/firebase/7.7.0/firebase-auth.js"></script>
+        <script defer src="/__/firebase/7.7.0/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/7.7.0/firebase-storage.js"></script>
+    
+    
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCEA36XQNHgX8C1Pfa1JCFX4tyHG2npWlE",
+                authDomain: "akhilreddym-wsp20-7b5de.firebaseapp.com",
+                databaseURL: "https://akhilreddym-wsp20-7b5de.firebaseio.com",
+                projectId: "akhilreddym-wsp20-7b5de",
+                storageBucket: "akhilreddym-wsp20-7b5de.appspot.com",
+                messagingSenderId: "776689969354",
+                appId: "1:776689969354:web:f368f92f264988357e2c33"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+    
+        <script src = "js/product_validate.js"></script>
+        <script src = "js/login_page.js"></script>
+        <script src = "js/auth.js"></script>
+        <script src = "js/home_page.js"></script>
+        <script src = "js/add_page.js"></script>
+        <script src = "js/show_page.js"></script>
+    
+        <script>
+            const glPageContent = document.getElementById('page_content')
+            const IMAGE_FOLDER = 'products/'
+            const COLLECTION = 'products/'
+    
+            window.onload = function() {
+                const currentPath = window.location.pathname
+                if (currentPath === '/login') {
+                    login_page()
+                } else if (currentPath === '/home') {
+                    home_page()
+                } else if (currentPath === '/add') {
+                    add_page()
+                } else if (currentPath === '/show') {
+                    show_page()
+                } else {
+                    window.location.href = '/'
+                }
+            }
+        </script>
+    
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </body>
+    
+    </html>
