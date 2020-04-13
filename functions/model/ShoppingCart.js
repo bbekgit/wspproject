@@ -5,6 +5,7 @@ class ShoppingCart {
     //    {products: {....},
     //       qty: 2}
     // ]
+    
 
     constructor() {
         this.contents= []
