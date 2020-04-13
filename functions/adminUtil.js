@@ -50,7 +50,7 @@ async function getOrderHistory(decodedIdToken){
     try{
       const collection = admin.firestore().collection(Constants.COLL_ORDERS)
       let orders = []
-      const snapshot = await collection.where('uid', '==', decodedIdToken.uid).orderBy("timestamp").get()
+      const snapshot = await collection.where("uid", ""==", decodedIdToken.uid).orderBy("timestamp").get()
       snapshot.forEach(doc => {
           orders.push(doc.data())
       })
