@@ -135,7 +135,7 @@ app.get('/b/signout', async (req, res) => {
 
 app.get('/b/profile', authAndRedirectSignIn, (req, res) => {
     const cartCount = req.session.cart ? req.session.cart.length : 0
-    console.log('=========== decodedIdToken', req.decodedIdToken)
+    console.log('========== decodedIdToken', req.decodedIdToken)
     res.setHeader('Cache-Control', 'private');
     res.render('profile', {user: req.decodedIdToken, cartCount, orders: false})
 } )
@@ -216,7 +216,7 @@ app.get('/b/orderhistory', authAndRedirectSignIn, async (req, res) => {
     try {
         const orders = await adminUtil.getOrderHistory(req.decodedIdToken)
         res.setHeader('Cache-Control', 'private');
-        res.render('profile.ejs', {user: req.user, cartCount: 0, orders})
+        res.render('profile.ejs', {user: req.decodedIdToken, cartCount: 0, orders})
     } catch (e) {
         console.log('===========', e)
         res.setHeader('Cache-Control', 'private');
