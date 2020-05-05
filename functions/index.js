@@ -60,12 +60,45 @@ app.get('/', auth, async (req, res) =>{
    // console.log('============', req.decodedIdToken ? req.decodedIdToken.email : 'no user') 
     const cartCount = req.session.cart ? req.session.cart.length : 0
     const coll = firebase.firestore().collection(Constants.COLL_PRODUCTS)
-    try {
-        let products = []
-        const snapshot = await coll.orderBy("name").get()
-        snapshot.forEach(doc => {
-            products.push({id: doc.id, data: doc.data()})
-        })
+        try {
+
+            let products = []
+            let snapshot = coll
+    
+            if(req.query.nextIndex!== undefined){
+                snapshot = snapshot.orderBy("name","asc")
+                snapshot = snapshot.startAfter(req.query.nextIndex)
+            }
+            else if(req.query.previousIndex !==undefined){
+                snapshot = snapshot.where("name","<",req.query.previousIndex)
+                snapshot = snapshot.orderBy("name","desc")
+            }
+            else{
+                snapshot = snapshot.orderBy("name","asc")
+            }
+            snapshot = snapshot.limit(10)
+            let returnValue = await snapshot.get()
+    
+            returnValue.forEach(doc=>{
+                products.push({id: doc.id, data: doc.data()})
+            })
+    
+    
+    
+            products = products.sort(function(current,next){
+    
+                if(current.data.name<next.data.name){
+                    return -1;
+                }
+                if(current.data.name>next.data.name){
+                    return 1;
+                }
+                return 0;
+    
+    
+    
+            })
+
         res.setHeader('Cache-Control', 'private');
         res.render('storefront.ejs', {error: false, products, user: req.decodedIdToken, cartCount})
     } catch (e) {
@@ -145,6 +178,17 @@ app.get('/b/signup', (req, res) => {
 })
 
 const ShoppingCart = require('./model/ShoppingCart.js')
+
+
+
+app.post('/b/nextPage', async(req,res)=>{
+    res.redirect('/?nextIndex='+req.body.nextIndex)
+
+})
+app.post('/b/previousPage', async(req,res)=>{
+    res.redirect('/?previousIndex='+req.body.previousIndex)
+
+})
 
 app.post('/b/add2cart', async (req, res) => {
     const id = req.body.docId

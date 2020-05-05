@@ -4,5 +4,471 @@
     padding: 15px;
     margin: auto;
 }
- 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+  body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+    color: #777;
+    background: #4CAF50;
+  }
+  
+  .container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact input[type="tel"],
+  #contact input[type="url"],
+  #contact textarea,
+  #contact button[type="submit"] {
+    font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+  }
+  
+  #contact {
+    background: #F9F9F9;
+    padding: 25px;
+    margin: 150px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+  
+  #contact h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  
+  #contact h4 {
+    margin: 5px 0 15px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  
+  fieldset {
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
+  }
+  
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact input[type="tel"],
+  #contact input[type="url"],
+  #contact textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+  }
+  
+  #contact input[type="text"]:hover,
+  #contact input[type="email"]:hover,
+  #contact input[type="tel"]:hover,
+  #contact input[type="url"]:hover,
+  #contact textarea:hover {
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid #aaa;
+  }
+  
+  #contact textarea {
+    height: 100px;
+    max-width: 100%;
+    resize: none;
+  }
+  
+  #contact button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #4CAF50;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  #contact button[type="submit"]:hover {
+    background: #43A047;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #contact button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .copyright {
+    text-align: center;
+  }
+  
+  #contact input:focus,
+  #contact textarea:focus {
+    outline: 0;
+    border: 1px solid #aaa;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #888;
+  }
+  
+  :-moz-placeholder {
+    color: #888;
+  }
+  
+  ::-moz-placeholder {
+    color: #888;
+  }
+  
+  :-ms-input-placeholder {
+    color: #888;
+  } 
 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* set body dimension and background */
+  body { 
+    min-width: 960px;
+    max-width: 960px;
+    margin: 5px auto 5px auto;
+    background-color: white; 
+  }
+  
+  /* header is block */
+  .header { 
+    display: block;
+  }
+  
+  /* Add your CSS rules based on the instructions in comments. */
+  
+  /* user-group links and quick-access links share the row */
+  /* TODO - use inline-block and width 55% */
+  .user-group {
+    display: inline-block;
+    width: 55%;
+  }
+  
+  /* TODO - use inline-block and width 40% */
+  .quick-access {
+    display: inline-block;
+    width: 40%;
+    
+    /* quick-access links align to the right */  
+    text-align: right;
+  }
+  
+  /* user group links share the row among themselves */
+  /* TODO - use inline-block */
+  /* TODO - add left and right padding each 5px */
+  /* TODO - add right border as seperation bar with color steelblue */
+  .user-group > li {
+    display: inline-block;
+    padding: 0 5px 0 5px;
+     border: 1px solid steelblue;
+    border-width: 0 1px 0 0;
+  }
+  
+  /* remove last bar */
+  /* TODO - set border width 0 */
+  .user-group > li:last-child {
+    border-width: 0;
+  }
+  
+  /* control the style of link texts */
+  /* TODO - set text color steelblue and font-size 75% */
+  .user-group > li > a {
+    
+    /* set font type */
+    color: darkblue;
+    font-size: 75%;
+    font-family: Muli;
+    /* remove underlie from links */
+    text-decoration: none;
+  }
+  
+  /* quick-access links share the row among themselves */
+  /* TODO - use inline-block */
+  /* TODO - add left and right padding each 5px */
+  /* TODO - add right border as seperation bar with color grey */
+  .quick-access > li {
+    display:inline-block;
+    padding: 0 5px 0 5px;
+    border: 1px solid grey;
+    border-width: 0 1px 0 0;
+  }
+  
+  /* remove last bar */
+  /* TODO - set border width 0 */
+  .quick-access > li:last-child {
+    border-width: 0;
+  }
+  
+  /* control link style */
+  /* TODO - set text color and font-size */  
+  .quick-access > li > * {
+    color: darkblue;
+    font-size: 68%;
+    /* set font type */
+    font-family: Muli;
+    /* remove underlie from links */
+    text-decoration: none;
+  }
+  
+  /* banner is another row itself */
+  /* TODO - set display block and margin 20px top/bottome and 10px left/right */
+  .banner { 
+    display: inline-block;
+    margin: 20px 10px 20px 10px;
+    
+  }
+  
+  /* two links/images inthe banner share the row */
+  /* TODO - use inline block */
+  .banner > a { 
+    display: inline-block
+      
+  }
+  
+  /* TODO - set first logo width 30% and 2nd 66% */
+  .banner > a:nth-child(1)  {
+    width: 30%;
+  }
+  .banner > a:nth-child(2)  { 
+    width: 66%;
+  }
+  
+  /* TODO - set display block for image since it is the only child and does NOT share the row with anyone under its parent. */
+  .banner > a > img {
+    display: inline-block;
+  }
+  .banner>a2{
+    padding: 200px;
+    
+  }
+  .banner>a3{
+    color:green;
+    font-size: 30px;
+    padding:800px;
+    
+  }
+    .quick-access> sli {
+      color: darkgreen;    
+      font-size: 25px;      
+    }
+  
+  /*Navbar */
+  * { padding: 0; margin: 0; }
+  body { background-color: white; }
+  .menu {  
+    /* Use display: block, since it will have the whole row for itself. */
+    display: block;
+    height: auto;
+    background-color: darkgreen;
+    text-align:center;
+  }
+  
+  .menu > li {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 15px;
+  }
+  .menu > li:hover {
+    color: darkblue;
+    background-color: lightgreen;
+  }
+  
+  
+  /* Select the span tag to control the color of the top level menu item. Notice, the text is inside of the span tag. */
+  .menu > li > span {
+    /* Use display: inline; without width and height value since they have no effects on inline element. Inline elements's width and height is controlled by browsers. */
+    display: inline;
+    color: white;
+    font-family:Amaranth;
+   font-size:20px;
+    padding:71px;
+  }
+  
+  .menu > li > a {
+    display: inline;
+    color: white;
+    font-family:Amaranth;
+   font-size:20px;
+    text-decoration:none;
+    padding:71px;
+  }
+  .menu > li:hover > span {
+    color: darkblue;
+  }
+  .menu > li:hover > a {
+    color: darkblue;
+  }
+  
+  /* Select 2nd level menu using path selector */
+  .menu > li > ul {
+  font-family:Amaranth;
+   font-size:18px;
+    display: none;
+  }
+  
+  /* Here is how to do dropdown menu */
+  /* Step 1 - set 1st level menu item position relative, so 2nd level menu position can be relative to it. */
+  .menu > li {
+    position: relative;
+  }
+  
+  /* 2nd level menu */
+  .menu > li:hover > ul {
+    display: block;
+    background-color: lightgreen;
+    color: darkblue;
+    width:241px;
+    z-index:30;
+    
+    /* Step 2 - set 2nd level menu position absolute, so it's position is relative to 1st level menu position, only when 1st level menu position is NOT static (relative or absolute) */
+    position: absolute;
+    
+    /* further use top and left (bottome/right) to control exact position */
+    top: 3em;
+    left: 0;
+  }
+  
+  /* TODO - Align 2nd menu to the right edge of 1st level menu */
+  .menu > li:last-child:hover > ul {
+    left: auto;
+    right: 0;
+    /* TODO - set left to be auto */
+    /* TODO - set right to be 0 to align on right edge */
+  }
+  
+  .menu > li > ul > li {
+    padding: 0.5em;
+  
+    /* remove bullets in front of list items */
+    list-style: none;
+  }
+  
+  .menu > li > ul > li > a {
+    color: darkblue;
+    
+    /* remove underline of links */
+    text-decoration: none;
+    
+    /* prevent link text from wrapping up to multiple lines */
+    white-space: nowrap;
+  }
+  
+  /* words*/
+  h1{
+   color:darkblue;
+   font-size: 40px;
+   text-align:center;
+   line-height: 100px;
+   font-family:Courgette;
+  }
+  .words{
+    font-family:Muli;
+  }
+  .words>h2{
+    color:darkblue;
+    line-height:60px
+  }
+  .words>ul{
+    color:grey;
+   
+  }
+  .words>li{
+    color:grey;
+     line-height:30px;
+  }
+  
+  
+  .fotorama{
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  /*footer*/
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  .footer {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-image: url("http://extensionreforms.dacnet.nic.in/images/9.jpg");
+    background-size: contain;
+    background-position: top center;
+    background-repeat: repeat;  
+  }
+  
+  
+  .footer > span {
+    display: block;
+    color: #dddddd;
+    font-family: sans-serif;
+  }
+  
+  .footer > span > a {
+    color: steelblue;
+    text-decoration: none;
+  }
+  
+  
+  .footer > .name {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 200%;
+    font-family: cookie;
+    color:darkblue;
+  }
+  
+  .footer > .social-media { margin-bottom: 10px; }
+  .footer > .social-media > a {
+    padding: 0 5px;
+    font-size: 38px;
+    color:darkblue;
+  }
+  
+  
+  .footer > .copyright { font-size: 60%; }
+  
+  
+  .footer > .quick-access > a {
+    border-right: 1px solid ;
+    padding: 0 1em;
+    font-size: 60%;
+    
+  }
+  .footer > .quick-access > a:last-child { border: 0; }
+  .footer>ul{
+    color:darkblue;
+  }

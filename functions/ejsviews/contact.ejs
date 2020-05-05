@@ -57,7 +57,39 @@ function showError(error) {
       <%- include('partials/nav.ejs', {page: 'contact', user}) %>
       <button type="button" onclick="showPosition();">Show My Current Position on Google Map</button>
     <div id="embedMap" style="width: 400px; height: 300px;">
-        
+     
+        <h1>Contact</h1>
+    <div class="container">  
+      <form id="contact" action="" method="post">
+        <h3>My Store Contact Form</h3>
+        <br>
+        <h4>Contact us for any queries</h4>
+        <fieldset>
+          <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <br>
+        <fieldset>
+          <input placeholder="Your Email Address" type="email" tabindex="2" required>
+        </fieldset>
+        <br>
+        <fieldset>
+          <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+        </fieldset>
+        <br>
+        <fieldset>
+          <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+        </fieldset>
+        <br>
+        <fieldset>
+          <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+        </fieldset>
+        <br>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+        <br>
+        <p class="copyright">Designed by <a href="https://github.com/bbekgit" target="_blank" title="BibekG">BibekG</a></p>
+      </form>    
     </div>
         <%- include('partials/scripts.ejs') %>
      </body>
